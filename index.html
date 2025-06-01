@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css" media="(min-width: 641px) and (max-width: 1200px)">
+  <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1201px)">
 </head>
 <body>
   <div class="container">
@@ -14,6 +16,9 @@
           <a href="#" class="menu-logo-link">
             <img src="svg/noemi-logo.svg" class="menu-logo" alt="логотип noemi">
           </a>
+          <button class="burger" id="burger">
+            ☰
+        </button>
           <ul class="menu-list">
             <li class="menu-item">
                 <a class="menu-link" href="#">Главная</a>
@@ -47,10 +52,11 @@
         <div class="trends-items">
           <article class="trend">
             <div class="trends-preview">
-              <figure>
-              <img src="images/trend1.jpg" alt="Мини-сад на подоконнике" class="trend-image">
-              <figcaption class="trend-caption"></figcaption>
+              <figure>                
+                <img src="images/trend1.jpg" alt="Мини-сад на подоконнике" class="trend-image">
+                <figcaption class="trend-caption"></figcaption>
               </figure>
+
               <div class="description">
                 <div class="trend-tag-content">
                   <span class="trend-tag"><a href="#">LIFESTYLE</a></span>
@@ -112,6 +118,7 @@
 
       <div class="main-content">
         <section class="posts">
+          <h2 class="visually-hidden">Новые посты</h2>
           <div class="post-section">
             <article class="post">
               <figure>
@@ -216,6 +223,7 @@
         <aside class="sidebar">
           <h4 class="new-post-title">Новые посты</h4>
           <section class="new-posts">
+            <h2 class="visually-hidden">Новые посты</h2>
             <div class="new-post-section">
               <article class="new-post">
                 <figure>
@@ -322,7 +330,11 @@
           <article class="shop-content">
             <div class="shop-items">
               <figure>
-                <img src="images/shop-item-desk1.jpg" alt="подушка на кресле с надписью" class="shop-item-image">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="images/shop-item-desk1.jpg">
+                  <source media="(min-width: 641px)" srcset="images/shop-item-tablet1.jpg">
+                  <img src="images/shop-item-mobile1.jpg" alt="подушка на кресле с надписью" class="shop-item-image">
+                </picture>
                 <figcaption class="shop-item-caption"></figcaption>
               </figure>
               <div class="shop-item">
@@ -340,7 +352,11 @@
           <article class="shop-content">
             <div class="shop-items">
               <figure>
-                <img src="images/shop-item-desk2.jpg" alt="кукла зайца с книжками и чашкой" class="shop-item-image">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="images/shop-item-desk2.jpg">
+                  <source media="(min-width: 641px)" srcset="images/shop-item-tablet2.jpg">
+                  <img src="images/shop-item-mobile2.jpg" alt="кукла зайца с книжками и чашкой" class="shop-item-image">
+                </picture>
                 <figcaption class="shop-item-caption"></figcaption>
               </figure>
               <div class="shop-item">
@@ -357,7 +373,11 @@
           <article class="shop-content">
             <div class="shop-items">
               <figure>
-                <img src="images/shop-item-desk3.jpg" alt="шестиугольная рамка рядом с вазой на столе" class="shop-item-image">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="images/shop-item-desk3.jpg">
+                  <source media="(min-width: 641px)" srcset="images/shop-item-tablet3.jpg">
+                  <img src="images/shop-item-mobile3.jpg" alt="шестиугольная рамка рядом с вазой на столе" class="shop-item-image">
+                </picture>
                 <figcaption class="shop-item-caption"></figcaption>
               </figure>
               <div class="shop-item">
@@ -405,6 +425,66 @@
         Copyright &copy; 2009–2019 City Blog LLC.
       </p>
     </footer>
+  </div>
+  <div class="popup-overlay _hidden">
+    <div class="popup-form">
+      <button class="popup-close" type="button" aria-label="Закрыть">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 441 441">
+          <path fill="#fff" stroke="#000" d="M220.336 170.564l.353.353.354-.353L390.288 1.318l49.796 49.773-169.269 169.245-.353.354.353.354 169.269 169.245-49.796 49.796-169.245-169.269-.354-.353-.353.353-169.27 169.269-49.748-49.796 169.245-169.245.353-.354-.353-.354L1.318 51.067 51.09 1.318l169.246 169.246z" />
+        </svg>
+      </button>
+      <h2 class="popup-title">ВАШ ФИДБЕК</h2>
+      <div class="popup-container">
+        <form class="popup-content" action="#" method="post">
+          <label class="form-group-popup1">
+            <span class="hint">Как часто вы заходите на сайт?</span>
+              <select class='select' name="frequency" required>
+                <option value="">Почти каждый день</option>
+                <option value="daily">Раз в несколько дней</option>
+                <option value="weekly">Раз в несколько недель</option>
+                <option value="rarely">Несколько раз в год</option>
+              </select>
+          </label>
+
+          <span class="hint">Вы подписаны на e-mail рассылку?</span>
+          <div class="radio-group">
+            <label class="radio">
+              <input type="radio" name="subscription" value="yes">
+              <span class="radio-svg">
+                <svg class="unchecked" width="24" height="24" viewBox="0 0 313 313" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M156.5 313c86.433 0 156.5-70.067 156.5-156.5S242.933 0 156.5 0 0 70.067 0 156.5 70.067 313 156.5 313zm0-17.389c76.829 0 139.111-62.282 139.111-139.111S233.329 17.389 156.5 17.389 17.389 79.67 17.389 156.5 79.67 295.611 156.5 295.611z" fill="#B59F5B" />
+                </svg>
+                <svg class="checked" width="24" height="24" viewBox="0 0 313 313" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M156.5 313c86.433 0 156.5-70.067 156.5-156.5S242.933 0 156.5 0 0 70.067 0 156.5 70.067 313 156.5 313zm0-17.389c76.829 0 139.111-62.282 139.111-139.111S233.329 17.389 156.5 17.389 17.389 79.67 17.389 156.5 79.67 295.611 156.5 295.611z" fill="#B59F5B" />
+                  <circle cx="156.5" cy="156.5" r="104.333" fill="#B59F5B" />
+                </svg>
+              </span>
+              <span class='answer'>Да</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="subscription" value="no">
+              <span class="radio-svg">
+                <svg class="unchecked" width="24" height="24" viewBox="0 0 313 313" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M156.5 313c86.433 0 156.5-70.067 156.5-156.5S242.933 0 156.5 0 0 70.067 0 156.5 70.067 313 156.5 313zm0-17.389c76.829 0 139.111-62.282 139.111-139.111S233.329 17.389 156.5 17.389 17.389 79.67 17.389 156.5 79.67 295.611 156.5 295.611z" fill="#B59F5B" />
+                </svg>
+                <svg class="checked" width="24" height="24" viewBox="0 0 313 313" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M156.5 313c86.433 0 156.5-70.067 156.5-156.5S242.933 0 156.5 0 0 70.067 0 156.5 70.067 313 156.5 313zm0-17.389c76.829 0 139.111-62.282 139.111-139.111S233.329 17.389 156.5 17.389 17.389 79.67 17.389 156.5 79.67 295.611 156.5 295.611z" fill="#B59F5B" />
+                  <circle cx="156.5" cy="156.5" r="104.333" fill="#B59F5B" />
+                </svg>
+              </span>
+              <span class='answer'>Нет</span>
+            </label>
+          </div>
+          <label class="form-group-popup">
+            <span class="hint">Расскажите, какой контент вы хотели бы видеть на нашем сайте
+            </span>
+            <textarea name="feedback" placeholder="Может, больше рецептов?"></textarea>
+          </label>
+          <button type="submit" class="submit-btn">ОТПРАВИТЬ</button>
+        </form>
+      </div>
+    </div>
   </div>
 </body>
 </html>
